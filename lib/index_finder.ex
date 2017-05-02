@@ -1,16 +1,29 @@
 defmodule IndexFinder do
+  def extract(items) do
+      IO.inspect items
+      IO.puts String.duplicate("-", 100)
+    items
+    |> Enum.map(fn t -> {elem(t, 1)} end)
+
+  end
+
+
   def find_index(items) when is_list(items) do
     items
     |> Enum.with_index()
-    |> Enum.group_by(fn ({value, index}) -> value end)
+    |> Enum.group_by(&elem(&1, 0))
     |> Map.values()
-    |> Enum.reduce(%{}, fn item -> Enum.into %{List.first(item) => 1} end)
-    |> IO.inspect
+    |> Enum.map(&extract/1)
+
+
+
+
+
   end
 
   def start(_type, _args) do
-    data = [2, 3, 4, 2, 1, 6, 1, 4, 1]
-    find_index(data)
+    data = ["B", "C", "D", "B", "A", "F", "A", "D", "A"]
+    find_index(data) |> IO.inspect
     {:ok, self()}
   end
 end
