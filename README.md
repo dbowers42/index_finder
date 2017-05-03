@@ -13,6 +13,26 @@ def deps do
 end
 ```
 
+## Running
+simply running ```mix``` will run some hard coded examples
+
+## Running Interactively
+
+run ```iex -S mix```
+
+then you can try the following
+
+```elixir
+iex> IndexFinder.find_index(["A", "B", "C", "A", "C"])
+{"B", 1}
+
+iex> IndexFinder.find_index([])
+nil
+
+iex> IndexFinder.find_index(["A", "A", "A"])
+nil
+```
+
 ## Testing
 ```
 mix test
