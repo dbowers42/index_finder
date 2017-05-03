@@ -1,6 +1,6 @@
 # IndexFinder
-
-**TODO: Add description**
+This repository is an exercise in creating a function that allows you to
+determine the first unique item in a list.
 
 ## Installation
 
@@ -13,7 +13,11 @@ def deps do
 end
 ```
 
+## Testing
+```
+mix test
+```
+
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/index_finder](https://hexdocs.pm/index_finder).
-
